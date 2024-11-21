@@ -1,13 +1,17 @@
 package com.example.demo;
 
+
 import com.example.demo.components.MyComponent;
 import com.example.demo.persistence.entity.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 
+
+@EntityScan("User")
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class DemoApplication extends SpringBootServletInitializer {
 
@@ -17,7 +21,7 @@ public class DemoApplication extends SpringBootServletInitializer {
         System.out.println(myComponent);
 
         User user = ctx.getBean("user", User.class);
-        user.firstName("Rich");
+
     }
 
 }
