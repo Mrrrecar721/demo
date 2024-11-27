@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
 
-@Component
+@Component("MyComponent")
 public class MyComponent {
     private final LocalTime ts= LocalTime.now();
 
